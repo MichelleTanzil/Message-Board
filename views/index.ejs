@@ -20,7 +20,6 @@
   <p class="text-danger"><%= x %></p>
   <% } %>
   <% } %>
-  <% JSON.stringify(messages) %>
   <% if(messages.new_comment) { %>
   <% for (var x of messages.new_comment) { %>
   <p class="text-danger"><%= x %></p>
@@ -38,7 +37,7 @@
     <button type="submit" class="btn btn-primary">Post Message</button>
   </form>
 
-  <% messages.forEach(function(message) { %>
+  <% allMessages.forEach(function(message) { %>
   <h3>Name: <%= message.name%></h3>
   <h3>Message: <%= message.message%></h3>
   <% for(var i = 0; i < message.comments.length; i++){%>

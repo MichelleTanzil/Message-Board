@@ -53,9 +53,8 @@ app.listen(8000, () => console.log("listening on port 8000"));
 
 app.get("/", (req, res) => {
   Message.find()
-    .then(messages => {
-      console.log(messages);
-      res.render("index", { messages: messages });
+    .then(allMessages => {
+      res.render("index", { allMessages: allMessages });
     })
     .catch(err => res.json(err));
 });
